@@ -92,19 +92,29 @@ const About = () => {
             />
           </div>
         </div>
-        {/* Grid 3 */}
-        <div className="grid-black-color grid-3">
-          <div className="z-10 w-[50%]">
-            <p className="headtext">Time Zone</p>
-            <p className="subtext">
-              My native is Udupi and currently i living in Banglore . And i would love to work over anyplace on earth i 
-              love traving and exploring finding new place and people
-            </p>
-          </div>
-          <figure className="absolute left-[30%] top-[10%]">
-            <Globe />
-          </figure>
-        </div>
+       
+       {/* Grid 3 */}
+<div className="grid-black-color grid-3">
+  <div className="flex flex-col md:flex-row items-center justify-between h-full gap-4">
+
+    {/* Text */}
+    <div className="w-full md:w-1/2 z-10">
+      <p className="headtext">Time Zone</p>
+
+      <p className="subtext">
+        My native is Udupi and currently I live in Bangalore.
+        I would love to work from anywhere on Earth.
+        I enjoy traveling, exploring new places, and meeting new people.
+      </p>
+    </div>
+
+    {/* Globe */}
+    <div className="w-full md:w-1/2 flex justify-center items-center">
+      <Globe className="w-40 h-40 sm:w-56 sm:h-56 md:w-full md:h-full" />
+    </div>
+
+  </div>
+</div>
         {/* Grid 4 */}
         <div className="grid-special-color grid-4">
           <div className="flex flex-col items-center justify-center gap-5 size-full">

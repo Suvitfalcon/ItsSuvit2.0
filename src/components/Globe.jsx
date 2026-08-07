@@ -3,7 +3,6 @@
 import createGlobe from "cobe";
 import { useMotionValue, useSpring } from "motion/react";
 import { useEffect, useRef } from "react";
-
 import { twMerge } from "tailwind-merge";
 
 const MOVEMENT_DAMPING = 1400;
@@ -40,8 +39,8 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
   const phiRef = useRef(0);
   const widthRef = useRef(0);
   const canvasRef = useRef(null);
+
   const pointerInteracting = useRef(null);
-  const pointerInteractionMovement = useRef(0);
 
   const r = useMotionValue(0);
   const rs = useSpring(r, {
@@ -52,27 +51,30 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
 
   const updatePointerInteraction = (value) => {
     pointerInteracting.current = value;
+
     if (canvasRef.current) {
-      canvasRef.current.style.cursor = value !== null ? "grabbing" : "grab";
+      canvasRef.current.style.cursor =
+        value !== null ? "grabbing" : "grab";
     }
   };
 
   const updateMovement = (clientX) => {
     if (pointerInteracting.current !== null) {
       const delta = clientX - pointerInteracting.current;
-      pointerInteractionMovement.current = delta;
       r.set(r.get() + delta / MOVEMENT_DAMPING);
+      pointerInteracting.current = clientX;
     }
   };
 
   useEffect(() => {
     const onResize = () => {
-      if (canvasRef.current) {
-        widthRef.current = canvasRef.current.offsetWidth;
-      }
+      if (!canvasRef.current) return;
+
+      widthRef.current = canvasRef.current.offsetWidth;
     };
 
     window.addEventListener("resize", onResize);
+
     onResize();
 
     const globe = createGlobe(canvasRef.current, {
@@ -80,42 +82,51 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
       width: widthRef.current * 2,
       height: widthRef.current * 2,
       onRender: (state) => {
-        if (!pointerInteracting.current) phiRef.current += 0.005;
+        if (!pointerInteracting.current) {
+          phiRef.current += 0.005;
+        }
+
         state.phi = phiRef.current + rs.get();
         state.width = widthRef.current * 2;
         state.height = widthRef.current * 2;
       },
     });
 
-    setTimeout(() => (canvasRef.current.style.opacity = "1"), 0);
+    requestAnimationFrame(() => {
+      if (canvasRef.current) {
+        canvasRef.current.style.opacity = "1";
+      }
+    });
+
     return () => {
       globe.destroy();
       window.removeEventListener("resize", onResize);
     };
-  }, [rs, config]);
+  }, [config, rs]);
 
   return (
     <div
       className={twMerge(
-        "mx-auto aspect-[1/1] w-full max-w-[600px]",
+        "mx-auto w-full max-w-[480px] aspect-square overflow-hidden",
         className
       )}
     >
       <canvas
-        className={twMerge(
-          "size-[30rem] opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
-        )}
         ref={canvasRef}
+        className="w-full h-full opacity-0 transition-opacity duration-500"
         onPointerDown={(e) => {
-          pointerInteracting.current = e.clientX;
           updatePointerInteraction(e.clientX);
         }}
         onPointerUp={() => updatePointerInteraction(null)}
         onPointerOut={() => updatePointerInteraction(null)}
         onMouseMove={(e) => updateMovement(e.clientX)}
-        onTouchMove={(e) =>
-          e.touches[0] && updateMovement(e.touches[0].clientX)
-        }
+        onTouchStart={(e) => {
+          if (e.touches[0]) updatePointerInteraction(e.touches[0].clientX);
+        }}
+        onTouchEnd={() => updatePointerInteraction(null)}
+        onTouchMove={(e) => {
+          if (e.touches[0]) updateMovement(e.touches[0].clientX);
+        }}
       />
     </div>
   );
