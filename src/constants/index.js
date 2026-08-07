@@ -1,7 +1,97 @@
 // PROJECTS
 export const myProjects = [
-  {
+   {
     id: 1,
+    title: "AIML-wage-predictor",
+    description:
+      "The AIML Wage Predictor is a machine learning-based application that predicts a worker's expected wage based on factors such as location, skill, experience, demand, and cost of living. It helps workers and employers estimate fair wages using data-driven insights, making salary decisions more accurate and transparent..",
+    subDescription: [
+      "The AIML Wage Predictor is a machine learning application that estimates a worker's wage based on factors such as skill, experience, location, and labor demand. It uses historical data to provide accurate and reliable wage predictions through a simple, user-friendly interface. The project helps users make informed salary decisions by leveraging AI and machine learning techniques. Technologies used: Python, Scikit-learn, Pandas, NumPy, Joblib, Streamlit, and Matplotlib..",
+    ],
+    href: "https://block-reveal-animation.vercel.app/", // update if you want to point to a specific repo
+    logo: "",
+    image: "/assets/projects/Aimlmigration.png", // replace with your actual image
+    tags: [
+      {
+        id: 1,
+        name: "GSAP",
+        path: "/assets/logos/gsap.png",
+      },
+      {
+        id: 2,
+        name: "Nextjs",
+        path: "/assets/logos/nextjs.png",
+      },
+      {
+        id: 3,
+        name: "JavaScript",
+        path: "/assets/logos/javascript.svg",
+      },
+    ],
+  },
+ {
+    id: 2,
+    title: "Network Traffic Analyzer",
+    description:
+      "The Network Traffic Analyzer is a Python-based application that monitors and analyzes live network traffic in real time. It captures packets, displays protocol information, and helps detect unusual network activity through an interactive dashboard. Technologies used: Python, Scapy, Streamlit, Pandas, and Matplotlib.",
+    subDescription: [
+      "The Network Traffic Analyzer is a real-time network monitoring application that captures and analyzes network packets to provide insights into traffic flow and protocol usage. It helps identify active connections, monitor bandwidth usage, and detect suspicious network activity through an interactive dashboard. The project demonstrates practical concepts of computer networking and cybersecurity by visualizing live network data. Technologies used: Python, Scapy, Streamlit, Pandas, Matplotlib, and Threading.",
+    ],
+    href: "https://curatedaiproject-jcjy.vercel.app/",
+    logo: "",
+    image: "/assets/projects/networktraffic.png",
+    tags: [
+      {
+        id: 1,
+        name: "Nextjs",
+        path: "/assets/logos/nextjs.png",
+      },
+      {
+        id: 2,
+        name: "TypeScript",
+        path: "/assets/logos/typescript.svg",
+      },
+      {
+        id: 3,
+        name: "TailwindCSS",
+        path: "/assets/logos/tailwindcss.svg",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Talking-Quize",
+    description:
+      "A Quize oriented website which will help u study and in further it will Read the question for you with its options",
+    subDescription: [
+      "Implemented a scalable admin module inside Moonstone to centralize management for both Lunim and Tabb.",
+      "Integrated Prismic CMS for structured content management across multiple product domains.",
+      "Developed reusable components and shared services to streamline operations between platforms.",
+      "Used Next.js for the frontend architecture and NestJS + Prisma for secure backend APIs.",
+    ],
+    href: "https://github.com/VERIDIITE",
+    logo: "",
+    image: "/assets/projects/quize.png",
+    tags: [
+      {
+        id: 1,
+        name: "Nextjs",
+        path: "/assets/logos/nextjs.png",
+      },
+      {
+        id: 2,
+        name: "Nest.js",
+        path: "/assets/logos/nestjs.svg",
+      },
+      {
+        id: 3,
+        name: "TypeScript",
+        path: "/assets/logos/typescript.svg",
+      },
+    ],
+  },
+  {
+    id: 4,
     title: "Online Football",
     description:
       "Its a Online multiplayer game which can be played by many player at once and which is compatative mode where 2 player will play at a time to win .",
@@ -44,7 +134,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 2,
+    id: 5,
     title: "A Maze-game",
     description:
       "Its a Maze game in which a enemy is AI powered who can detect the player and come to eliminate him.",
@@ -70,96 +160,6 @@ export const myProjects = [
       },
       {
         id: 4,
-        name: "TailwindCSS",
-        path: "/assets/logos/tailwindcss.svg",
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "Talking-Quize",
-    description:
-      "A Quize oriented website which will help u study and in further it will Read the question for you with its options",
-    subDescription: [
-      "Implemented a scalable admin module inside Moonstone to centralize management for both Lunim and Tabb.",
-      "Integrated Prismic CMS for structured content management across multiple product domains.",
-      "Developed reusable components and shared services to streamline operations between platforms.",
-      "Used Next.js for the frontend architecture and NestJS + Prisma for secure backend APIs.",
-    ],
-    href: "https://github.com/VERIDIITE",
-    logo: "",
-    image: "/assets/projects/quize.png",
-    tags: [
-      {
-        id: 1,
-        name: "Nextjs",
-        path: "/assets/logos/nextjs.png",
-      },
-      {
-        id: 2,
-        name: "Nest.js",
-        path: "/assets/logos/nestjs.svg",
-      },
-      {
-        id: 3,
-        name: "TypeScript",
-        path: "/assets/logos/typescript.svg",
-      },
-    ],
-  },
-  {
-    id: 4,
-    title: "AIML-wage-predictor",
-    description:
-      "The AIML Wage Predictor is a machine learning-based application that predicts a worker's expected wage based on factors such as location, skill, experience, demand, and cost of living. It helps workers and employers estimate fair wages using data-driven insights, making salary decisions more accurate and transparent..",
-    subDescription: [
-      "The AIML Wage Predictor is a machine learning application that estimates a worker's wage based on factors such as skill, experience, location, and labor demand. It uses historical data to provide accurate and reliable wage predictions through a simple, user-friendly interface. The project helps users make informed salary decisions by leveraging AI and machine learning techniques. Technologies used: Python, Scikit-learn, Pandas, NumPy, Joblib, Streamlit, and Matplotlib..",
-    ],
-    href: "https://block-reveal-animation.vercel.app/", // update if you want to point to a specific repo
-    logo: "",
-    image: "/assets/projects/Aimlmigration.png", // replace with your actual image
-    tags: [
-      {
-        id: 1,
-        name: "GSAP",
-        path: "/assets/logos/gsap.png",
-      },
-      {
-        id: 2,
-        name: "Nextjs",
-        path: "/assets/logos/nextjs.png",
-      },
-      {
-        id: 3,
-        name: "JavaScript",
-        path: "/assets/logos/javascript.svg",
-      },
-    ],
-  },
-  {
-    id: 5,
-    title: "Network Traffic Analyzer",
-    description:
-      "The Network Traffic Analyzer is a Python-based application that monitors and analyzes live network traffic in real time. It captures packets, displays protocol information, and helps detect unusual network activity through an interactive dashboard. Technologies used: Python, Scapy, Streamlit, Pandas, and Matplotlib.",
-    subDescription: [
-      "The Network Traffic Analyzer is a real-time network monitoring application that captures and analyzes network packets to provide insights into traffic flow and protocol usage. It helps identify active connections, monitor bandwidth usage, and detect suspicious network activity through an interactive dashboard. The project demonstrates practical concepts of computer networking and cybersecurity by visualizing live network data. Technologies used: Python, Scapy, Streamlit, Pandas, Matplotlib, and Threading.",
-    ],
-    href: "https://curatedaiproject-jcjy.vercel.app/",
-    logo: "",
-    image: "/assets/projects/networktraffic.png",
-    tags: [
-      {
-        id: 1,
-        name: "Nextjs",
-        path: "/assets/logos/nextjs.png",
-      },
-      {
-        id: 2,
-        name: "TypeScript",
-        path: "/assets/logos/typescript.svg",
-      },
-      {
-        id: 3,
         name: "TailwindCSS",
         path: "/assets/logos/tailwindcss.svg",
       },
